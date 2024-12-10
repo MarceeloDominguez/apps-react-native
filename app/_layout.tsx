@@ -27,7 +27,7 @@ export default function RootLayout() {
 
   return (
     <GluestackUIProvider mode="light">
-      <Stack screenOptions={{ headerShown: false }} />
+      <Stack screenOptions={{ headerShown: false, animation: "fade" }} />
       <StatusBar style="auto" />
     </GluestackUIProvider>
   );

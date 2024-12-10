@@ -11,7 +11,7 @@ export default function MainApp() {
           size="md"
           variant="solid"
           action="primary"
-          onPress={() => router.push("/(house-booking)")}
+          onPress={() => router.push("/(house-booking)" as any)}
         >
           <ButtonText>House Booking App</ButtonText>
         </Button>
