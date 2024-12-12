@@ -6,6 +6,7 @@ export default function RootLayout() {
     <Stack screenOptions={{ animation: "fade" }}>
       <Stack.Screen name="index" options={{ headerShown: false }} />
       <Stack.Screen name="home" options={{ headerShown: false }} />
+      <Stack.Screen name="house/[id]" options={{ headerShown: false }} />
     </Stack>
   );
 }
