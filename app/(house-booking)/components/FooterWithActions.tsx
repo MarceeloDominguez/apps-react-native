@@ -9,12 +9,8 @@ export default function FooterWithActions() {
       <View className="bg-[#ecf2f3] h-10 w-10 items-center justify-center rounded-full">
         <MessageSquareMore color="#196d7e" size={18} />
       </View>
-      <Button
-        variant="solid"
-        action="default"
-        className="flex-1 rounded-full bg-[#196d7e]"
-      >
-        <ButtonText>Request Appoitment</ButtonText>
+      <Button action="secondary" className="flex-1 rounded-full bg-[#196d7e]">
+        <ButtonText className="text-slate-50">Request Appoitment</ButtonText>
       </Button>
     </View>
   );

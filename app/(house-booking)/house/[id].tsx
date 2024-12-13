@@ -1,9 +1,8 @@
-import { View, Pressable, ScrollView } from "react-native";
+import { View, ScrollView } from "react-native";
 import React from "react";
-import { router, useLocalSearchParams } from "expo-router";
+import { Stack, useLocalSearchParams } from "expo-router";
 import houseListings from "../data/data";
 import { Image } from "@/components/ui/image";
-import { ChevronLeft } from "lucide-react-native";
 import Animated, {
   interpolateColor,
   useAnimatedStyle,
@@ -32,21 +31,19 @@ export default function HouseDetails() {
 
   return (
     <>
-      <View>
-        <Animated.View
-          style={animatedHeaderStyle}
-          className="absolute h-32 right-0 left-0 top-0 bottom-0 z-10 items-center justify-center"
-        >
-          <Pressable
-            onPress={() => router.back()}
-            className="bg-slate-50/50 absolute left-4 bottom-5 w-10 h-10 items-center justify-center rounded-full"
-          >
-            <ChevronLeft color="#196d7e" size={24} />
-          </Pressable>
-        </Animated.View>
-      </View>
+      <Stack.Screen
+        options={{
+          headerShown: true,
+          headerTransparent: true,
+          headerTitle: "",
+          headerTintColor: "#196d7e",
+          headerBackground: () => (
+            <Animated.View style={[animatedHeaderStyle, { flex: 1 }]} />
+          ),
+        }}
+      />
       <ScrollView
-        className="bg-slate-50 relative"
+        className="bg-slate-50"
         onScroll={(e) => {
           scrollY.value = e.nativeEvent.contentOffset.y;
         }}
