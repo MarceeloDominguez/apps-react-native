@@ -11,12 +11,17 @@ export default function MainApp() {
           size="md"
           variant="solid"
           action="primary"
-          onPress={() => router.push("/(house-booking)" as any)}
+          onPress={() => router.push("/(house-booking)")}
         >
           <ButtonText>House Booking App</ButtonText>
         </Button>
-        <Button size="md" variant="solid" action="primary">
-          <ButtonText>Second App</ButtonText>
+        <Button
+          size="md"
+          variant="solid"
+          action="primary"
+          onPress={() => router.push("/(appointment-doctor)")}
+        >
+          <ButtonText>Appointment Doctor</ButtonText>
         </Button>
       </ButtonGroup>
     </SafeAreaView>
