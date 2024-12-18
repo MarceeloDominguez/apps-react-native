@@ -37,7 +37,7 @@ export default function Onboarding() {
             iconPosition="right"
             containerStyle={styles.containerStyleButton}
             textStyle={{ color: "#fff" }}
-            onPress={() => router.push("/home")}
+            onPress={() => router.push("/(tabs)/home" as `${string}:${string}`)}
           />
         </View>
       </SafeAreaView>
