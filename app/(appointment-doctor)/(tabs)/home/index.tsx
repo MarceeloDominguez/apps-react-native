@@ -9,6 +9,7 @@ import MedicalSpecialtiesList from "../../components/MedicalSpecialtiesList";
 import { Text } from "@/components/ui/text";
 import { colors } from "@/constants/theme";
 import TopDoctorsList from "../../components/TopDoctorsList";
+import { router } from "expo-router";
 
 export default function HomeScreen() {
   return (
@@ -28,7 +29,11 @@ export default function HomeScreen() {
             <Heading size="md" className="flex-1">
               Top Doctors
             </Heading>
-            <Pressable>
+            <Pressable
+              onPress={() =>
+                router.push({ pathname: "/list-doctor/listdoctor" })
+              }
+            >
               <Text
                 size="sm"
                 className="font-semibold"

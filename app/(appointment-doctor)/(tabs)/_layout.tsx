@@ -11,6 +11,7 @@ export default function TabsNavigation() {
         tabBarActiveTintColor: colors.primary,
         tabBarInactiveTintColor: "#bc9fdd",
         tabBarStyle: { backgroundColor: colors.background },
+        tabBarHideOnKeyboard: true,
       }}
     >
       <Tabs.Screen
