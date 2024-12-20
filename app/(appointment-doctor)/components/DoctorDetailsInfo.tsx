@@ -5,7 +5,7 @@ import { VStack } from "@/components/ui/vstack";
 import { Heading } from "@/components/ui/heading";
 import { Text } from "@/components/ui/text";
 import { Divider } from "@/components/ui/divider";
-import { Star } from "lucide-react-native";
+import Ionicons from "@expo/vector-icons/Ionicons";
 
 type DoctorDetailsInfoProps = {
   patients: string | undefined;
@@ -39,7 +39,7 @@ export default function DoctorDetailsInfo({
           Rating
         </Heading>
         <View className="flex-row items-center justify-center gap-1">
-          <Star color="#f8bc06" size={14} />
+          <Ionicons name="star" size={16} color="#f8bc06" />
           <Text>{rating}</Text>
         </View>
       </VStack>

@@ -4,10 +4,11 @@ import { Text } from "@/components/ui/text";
 import { Image } from "@/components/ui/image";
 import { Card } from "@/components/ui/card";
 import { Heading } from "@/components/ui/heading";
-import { BriefcaseBusiness, Star } from "lucide-react-native";
+import { BriefcaseBusiness } from "lucide-react-native";
 import { colors } from "@/constants/theme";
 import { Doctor } from "../data/data";
 import { Link } from "expo-router";
+import Ionicons from "@expo/vector-icons/Ionicons";
 
 type DoctorCardProps = {
   doctor: Doctor;
@@ -26,7 +27,7 @@ export default function DoctorCard({ doctor }: DoctorCardProps) {
         <Text>{doctor.special}</Text>
         <View className="flex-row justify-between mt-3">
           <View className="flex-row gap-1 items-center">
-            <Star color="#f8bc06" size={16} />
+            <Ionicons name="star" size={16} color="#f8bc06" />
             <Text className="font-bold">{doctor.rating}</Text>
           </View>
           <View className="flex-row gap-1 items-center">
