@@ -5,20 +5,34 @@ import { Text } from "@/components/ui/text";
 import { Image } from "@/components/ui/image";
 import { VStack } from "@/components/ui/vstack";
 import CustomBadge from "@/components/shared/CustomBadge";
-import { BadgeCheck, Heart } from "lucide-react-native";
+import { BadgeCheck } from "lucide-react-native";
 import { Heading } from "@/components/ui/heading";
 import StartRating from "./StartRating";
 import CustomButton from "@/components/shared/CustomButton";
 import { colors } from "@/constants/theme";
 import { Doctor } from "../data/data";
+import { useFavorites } from "../context/FavoritesContext";
+import Ionicons from "@expo/vector-icons/Ionicons";
 
 type DoctorCardItemListProps = {
   doctor: Doctor;
+  showButton?: boolean;
 };
 
 export default function DoctorCardItemList({
   doctor,
+  showButton = true,
 }: DoctorCardItemListProps) {
+  const { addFavorite, removeFavorite, isFavorite } = useFavorites();
+
+  const handleToggleFavorite = () => {
+    if (isFavorite(Number(doctor?.id))) {
+      removeFavorite(Number(doctor?.id));
+    } else {
+      addFavorite(doctor!);
+    }
+  };
+
   return (
     <Card className="rounded-xl" style={styles.card}>
       <View className="flex-row gap-4">
@@ -40,14 +54,21 @@ export default function DoctorCardItemList({
           <StartRating rating={doctor.rating} />
         </VStack>
         <View>
-          <Heart color={colors.primary} size={20} />
+          <Ionicons
+            name={isFavorite(Number(doctor?.id)) ? "heart" : "heart-outline"}
+            size={20}
+            color={colors.primary}
+            onPress={handleToggleFavorite}
+          />
         </View>
       </View>
-      <CustomButton
-        title="Make an Appointment"
-        containerStyle={styles.containerStyleButton}
-        textStyle={{ color: colors.primary }}
-      />
+      {showButton && (
+        <CustomButton
+          title="Make an Appointment"
+          containerStyle={styles.containerStyleButton}
+          textStyle={{ color: colors.primary }}
+        />
+      )}
     </Card>
   );
 }

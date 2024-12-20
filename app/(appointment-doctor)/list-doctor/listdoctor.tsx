@@ -20,12 +20,7 @@ export default function ListDoctorScreen() {
         data={doctors}
         keyExtractor={(_, index) => index.toString()}
         showsVerticalScrollIndicator={false}
-        contentContainerStyle={{
-          gap: 16,
-          paddingHorizontal: 20,
-          paddingVertical: 10,
-          backgroundColor: colors.background,
-        }}
+        contentContainerStyle={styles.contentContainerStyle}
         renderItem={({ item }) => <DoctorCardItemList doctor={item} />}
       />
     </View>
@@ -33,10 +28,10 @@ export default function ListDoctorScreen() {
 }
 
 const styles = StyleSheet.create({
-  containerStyleButton: {
-    marginTop: 10,
-    borderWidth: 1,
-    borderColor: colors.primary,
-    backgroundColor: "#ddd5e9",
+  contentContainerStyle: {
+    gap: 16,
+    paddingHorizontal: 20,
+    paddingVertical: 10,
+    backgroundColor: colors.background,
   },
 });

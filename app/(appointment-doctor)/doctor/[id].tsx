@@ -3,17 +3,28 @@ import React from "react";
 import { router, Stack, useLocalSearchParams } from "expo-router";
 import { doctors } from "../data/data";
 import { colors } from "@/constants/theme";
-import { ChevronLeft, Heart } from "lucide-react-native";
+import { ChevronLeft } from "lucide-react-native";
 import { StatusBar } from "expo-status-bar";
 import DoctorDetailsHeader from "../components/DoctorDetailsHeader";
 import DoctorDetailsInfo from "../components/DoctorDetailsInfo";
 import DoctorDetailsBiography from "../components/DoctorDetailsBiography";
 import DoctorDetailsContact from "../components/DoctorDetailsContact";
 import CustomButton from "@/components/shared/CustomButton";
+import { useFavorites } from "../context/FavoritesContext";
+import Ionicons from "@expo/vector-icons/Ionicons";
 
 export default function DoctorDetails() {
   const { id } = useLocalSearchParams();
   const doctor = doctors.find((doctor) => doctor.id === Number(id));
+  const { addFavorite, removeFavorite, isFavorite } = useFavorites();
+
+  const handleToggleFavorite = () => {
+    if (isFavorite(Number(doctor?.id))) {
+      removeFavorite(Number(doctor?.id));
+    } else {
+      addFavorite(doctor!);
+    }
+  };
 
   return (
     <ScrollView
@@ -42,9 +53,15 @@ export default function DoctorDetails() {
           headerRight: () => (
             <Pressable
               className="bg-slate-50/10 p-3 rounded-full"
-              onPress={() => console.log("heart")}
+              onPress={handleToggleFavorite}
             >
-              <Heart color={colors.background} size={18} />
+              <Ionicons
+                name={
+                  isFavorite(Number(doctor?.id)) ? "heart" : "heart-outline"
+                }
+                size={18}
+                color={colors.background}
+              />
             </Pressable>
           ),
         }}
