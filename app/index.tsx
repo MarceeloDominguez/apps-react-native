@@ -23,6 +23,14 @@ export default function MainApp() {
         >
           <ButtonText>Appointment Doctor</ButtonText>
         </Button>
+        <Button
+          size="md"
+          variant="solid"
+          action="primary"
+          onPress={() => router.push("/(online-shop)")}
+        >
+          <ButtonText>Online Shop</ButtonText>
+        </Button>
       </ButtonGroup>
     </SafeAreaView>
   );
