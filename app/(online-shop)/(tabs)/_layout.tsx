@@ -40,7 +40,7 @@ export default function TabNavigation() {
       <Tabs.Screen
         name="favorite"
         options={{
-          tabBarLabel: "Favorite",
+          tabBarLabel: "Favorites",
           tabBarIcon: ({ color }) => <Heart color={color} />,
         }}
       />
