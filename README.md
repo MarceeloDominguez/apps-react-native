@@ -33,3 +33,13 @@
       <td><img src="https://github.com/user-attachments/assets/bb8cf74d-738b-4d2c-b5af-731e61c40934" width="300"></td>
    </tr>
 </table>
+
+# 3 - Online Shop 🛍️
+
+<table>
+   <tr>
+      <td><img src="https://github.com/user-attachments/assets/f6657a75-460a-4eca-8740-d9cd1b4d7922" width="300"></td>
+      <td><img src="https://github.com/user-attachments/assets/b98ce61f-3743-4986-94ad-d637f8f71980" width="300"></td>
+      <td><img src="https://github.com/user-attachments/assets/00b99f28-f77d-43ee-bdb4-dc3351a0eda1" width="300"></td>
+   </tr>
+</table>
